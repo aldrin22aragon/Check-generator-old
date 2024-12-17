@@ -14,9 +14,7 @@
         Return Code
     End Function
 
-    Public Shared Function ToGetCodeList()
-        Return String.Format("SELECT * FROM Codestbl;")
-    End Function
+    Public Const ToGetCodeList As String = "SELECT * FROM Codestbl;"
 
     Public Function ToInsertQuery() As String
         Return String.Format("INSERT INTO Codestbl (Code,CheckType)VALUES('{0}',{1});", Code, CheckType)

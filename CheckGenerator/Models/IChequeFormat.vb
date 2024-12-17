@@ -1,5 +1,5 @@
 ﻿Public Interface IChequeFormat
-   Sub Print(payee1 As String, payee3 As String, chequeDate As Date, amount As Double, printer As Printing.PrintPageEventArgs, crossed As Boolean, Optional xAdjustment As Integer = 0, Optional yAdjustment As Integer = 0)
+    Sub Print(payee1 As String, payee3 As String, chequeDate As Date, amount As Double, printer As Printing.PrintPageEventArgs, crossed As Boolean, Optional xAdjustment As Integer = 0, Optional yAdjustment As Integer = 0)
 End Interface
 
 

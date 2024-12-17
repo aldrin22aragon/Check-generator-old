@@ -86,7 +86,7 @@
         If Amount > 0 Then
             Dim amountArgs As String() = Amount.ToString("N2").Split(".")
             If Val(Amount) > 0 Then
-                _AmountInWords = " **" & AmountInWords(amountArgs(0)) & " & " & amountArgs(1) & "/100 ONLY**"
+                _AmountInWords = "   " & AmountInWords(amountArgs(0)) & " and " & amountArgs(1) & "/100 ONLY  "
             End If
         End If
 

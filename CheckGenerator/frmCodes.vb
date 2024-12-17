@@ -6,9 +6,7 @@ Public Class frmCodes
     Private SelectedPayee As New CodeInf
 
     Private Sub Check_Records_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         Worker.WorkerSupportsCancellation = True
-
         RefreshCodes()
     End Sub
 

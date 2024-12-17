@@ -9,7 +9,7 @@
         valStr = valStr.ToLower
         upperFirst = ""
         If Trim(valStr).Length > 0 Then
-            upperFirst = "**" & Trim(valStr.Substring(0, 1).ToUpper & valStr.Substring(1, valStr.Length - 1)) & " & " & Trim(Form1.tbAmount.Text.Split(".")(1)) & "/100 only**"
+            upperFirst = "   " & Trim(valStr.Substring(0, 1).ToUpper & valStr.Substring(1, valStr.Length - 1)) & " and " & Trim(Form1.tbAmount.Text.Split(".")(1)) & "/100 only  "
         End If
 
     End Function

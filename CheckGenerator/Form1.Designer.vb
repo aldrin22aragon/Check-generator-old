@@ -28,9 +28,9 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PrintPreview = New System.Windows.Forms.PrintPreviewControl()
         Me.grpFields = New System.Windows.Forms.GroupBox()
-        Me.tbXAxisAdjustment = New System.Windows.Forms.TextBox()
+        Me.tbXAxisAdjustment_ = New System.Windows.Forms.NumericUpDown()
+        Me.tbYAxisAdjustment_ = New System.Windows.Forms.NumericUpDown()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.tbYAxisAdjustment = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.chbHasChequeDate = New System.Windows.Forms.CheckBox()
         Me.chbCrossedCheque = New System.Windows.Forms.CheckBox()
@@ -80,7 +80,10 @@ Partial Class Form1
         Me.tsDt = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.printEndorsement = New System.Drawing.Printing.PrintDocument()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.grpFields.SuspendLayout()
+        CType(Me.tbXAxisAdjustment_, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbYAxisAdjustment_, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -128,9 +131,9 @@ Partial Class Form1
         '
         'grpFields
         '
-        Me.grpFields.Controls.Add(Me.tbXAxisAdjustment)
+        Me.grpFields.Controls.Add(Me.tbXAxisAdjustment_)
+        Me.grpFields.Controls.Add(Me.tbYAxisAdjustment_)
         Me.grpFields.Controls.Add(Me.Label6)
-        Me.grpFields.Controls.Add(Me.tbYAxisAdjustment)
         Me.grpFields.Controls.Add(Me.Label2)
         Me.grpFields.Controls.Add(Me.chbHasChequeDate)
         Me.grpFields.Controls.Add(Me.chbCrossedCheque)
@@ -154,17 +157,25 @@ Partial Class Form1
         Me.grpFields.TabStop = False
         Me.grpFields.Text = "Informations"
         '
-        'tbXAxisAdjustment
+        'tbXAxisAdjustment_
         '
-        Me.tbXAxisAdjustment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.tbXAxisAdjustment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.tbXAxisAdjustment.Location = New System.Drawing.Point(391, 200)
-        Me.tbXAxisAdjustment.Margin = New System.Windows.Forms.Padding(2)
-        Me.tbXAxisAdjustment.Name = "tbXAxisAdjustment"
-        Me.tbXAxisAdjustment.Size = New System.Drawing.Size(73, 23)
-        Me.tbXAxisAdjustment.TabIndex = 10
-        Me.tbXAxisAdjustment.Text = "280"
-        Me.tbXAxisAdjustment.Visible = False
+        Me.tbXAxisAdjustment_.Location = New System.Drawing.Point(391, 202)
+        Me.tbXAxisAdjustment_.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
+        Me.tbXAxisAdjustment_.Minimum = New Decimal(New Integer() {1000000, 0, 0, -2147483648})
+        Me.tbXAxisAdjustment_.Name = "tbXAxisAdjustment_"
+        Me.tbXAxisAdjustment_.Size = New System.Drawing.Size(73, 23)
+        Me.tbXAxisAdjustment_.TabIndex = 12
+        Me.tbXAxisAdjustment_.Value = New Decimal(New Integer() {280, 0, 0, 0})
+        '
+        'tbYAxisAdjustment_
+        '
+        Me.tbYAxisAdjustment_.Location = New System.Drawing.Point(156, 202)
+        Me.tbYAxisAdjustment_.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
+        Me.tbYAxisAdjustment_.Minimum = New Decimal(New Integer() {1000000, 0, 0, -2147483648})
+        Me.tbYAxisAdjustment_.Name = "tbYAxisAdjustment_"
+        Me.tbYAxisAdjustment_.Size = New System.Drawing.Size(73, 23)
+        Me.tbYAxisAdjustment_.TabIndex = 11
+        Me.tbYAxisAdjustment_.Value = New Decimal(New Integer() {280, 0, 0, -2147483648})
         '
         'Label6
         '
@@ -176,19 +187,6 @@ Partial Class Form1
         Me.Label6.Size = New System.Drawing.Size(142, 17)
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "X Axis Adjustment:"
-        Me.Label6.Visible = False
-        '
-        'tbYAxisAdjustment
-        '
-        Me.tbYAxisAdjustment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.tbYAxisAdjustment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.tbYAxisAdjustment.Location = New System.Drawing.Point(156, 200)
-        Me.tbYAxisAdjustment.Margin = New System.Windows.Forms.Padding(2)
-        Me.tbYAxisAdjustment.Name = "tbYAxisAdjustment"
-        Me.tbYAxisAdjustment.Size = New System.Drawing.Size(73, 23)
-        Me.tbYAxisAdjustment.TabIndex = 8
-        Me.tbYAxisAdjustment.Text = "280"
-        Me.tbYAxisAdjustment.Visible = False
         '
         'Label2
         '
@@ -200,7 +198,6 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(142, 17)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Y Axis Adjustment:"
-        Me.Label2.Visible = False
         '
         'chbHasChequeDate
         '
@@ -623,7 +620,7 @@ Partial Class Form1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.Transparent
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsRecords, Me.btnCodes})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsRecords, Me.btnCodes, Me.ToolStripButton1})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(1025, 37)
@@ -665,7 +662,7 @@ Partial Class Form1
         '
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.Black
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(100, 17)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(99, 17)
         Me.ToolStripStatusLabel1.Text = "Date And Time :"
         '
         'ToolStripStatusLabel2
@@ -677,7 +674,7 @@ Partial Class Form1
         '
         Me.tsDt.ForeColor = System.Drawing.Color.Black
         Me.tsDt.Name = "tsDt"
-        Me.tsDt.Size = New System.Drawing.Size(93, 17)
+        Me.tsDt.Size = New System.Drawing.Size(92, 17)
         Me.tsDt.Text = "00/00/00 00:00"
         '
         'Timer1
@@ -687,6 +684,17 @@ Partial Class Form1
         '
         'printEndorsement
         '
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(73, 34)
+        Me.ToolStripButton1.Text = "Settings"
+        Me.ToolStripButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ToolStripButton1.ToolTipText = "Settings"
         '
         'Form1
         '
@@ -705,6 +713,8 @@ Partial Class Form1
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.grpFields.ResumeLayout(False)
         Me.grpFields.PerformLayout()
+        CType(Me.tbXAxisAdjustment_, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbYAxisAdjustment_, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.Panel6.ResumeLayout(False)
@@ -775,10 +785,11 @@ Partial Class Form1
     Friend WithEvents tsDt As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents btnCodes As ToolStripButton
-    Friend WithEvents tbYAxisAdjustment As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents tbXAxisAdjustment As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents printEndorsement As Printing.PrintDocument
     Friend WithEvents clCrossed As ColumnHeader
+    Friend WithEvents tbXAxisAdjustment_ As NumericUpDown
+    Friend WithEvents tbYAxisAdjustment_ As NumericUpDown
+    Friend WithEvents ToolStripButton1 As ToolStripButton
 End Class

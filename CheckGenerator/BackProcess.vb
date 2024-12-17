@@ -1,13 +1,6 @@
 ﻿Imports System.IO
 Module BackProcess
-    'Public Function upperFirst(ByVal valStr As String) As String
-    '    valStr = valStr.ToLower
-    '    upperFirst = ""
-    '    If Trim(valStr).Length > 0 Then
-    '        upperFirst = "**" & Trim(valStr.Substring(0, 1).ToUpper & valStr.Substring(1, valStr.Length - 1)) & " & " & Trim(Form1.txtAmount.Text.Split(".")(1)) & "/100 only**"
-    '    End If
 
-    'End Function
     Function NumberToText(ByVal n As Integer) As String
         Select Case n
             Case 0
@@ -58,9 +51,9 @@ Module BackProcess
     Public Function getAmount() As String
         getAmount = ""
       If Form1.tbAmount.Text.Length > 0 Then
-         'agay
-         getAmount = "**" & FormatCurrency(Trim(Form1.tbAmount.Text)).Replace("$", "") & "**"
-      End If
+            'agay
+            getAmount = "" & FormatCurrency(Trim(Form1.tbAmount.Text)).Replace("$", "") & ""
+        End If
    End Function
 
     Public Sub readCsv(ByVal Path As String)
